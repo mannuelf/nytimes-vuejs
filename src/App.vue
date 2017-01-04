@@ -1,16 +1,19 @@
 <template>
   <div id="app">
     <img class="nyt-logo" src="./assets/NewYorkTimes.svg">
+    <SearchInput></SearchInput>
   </div>
 </template>
 
 <script>
 import Hello from './components/Hello';
+import SearchInput from './components/SearchInput';
 
 export default {
   name: 'app',
   components: {
     Hello,
+    SearchInput,
   },
 };
 </script>
