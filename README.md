@@ -5,4 +5,4 @@ https://developer.nytimes.com/
 
 Built using: [vue-webpack-boilerplate](https://github.com/vuejs-templates/webpack)
 
-You can also checkout the jQuery implimentation here: [jQuery Version](https://github.com/manidf/nytimes-jquery)
+`DEMO` coming soon... You can also checkout the jQuery implimentation here: [jQuery Version](https://github.com/manidf/nytimes-jquery)
