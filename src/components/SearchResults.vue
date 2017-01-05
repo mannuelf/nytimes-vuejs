@@ -1,7 +1,9 @@
 
 <template>
   <div class="nyt-search-results">
-    {{ msg }}
+    <div v-for="article in articles">
+      {{ articles }}
+    </div>
   </div>
 </template>
 
@@ -12,7 +14,7 @@ export default {
   name: 'nyt-search-results',
   data() {
     return {
-      msg: 'Searching...',
+      artices: [],
     };
   },
   mounted() {
@@ -27,7 +29,7 @@ export default {
     });
     // make an ajax call
     apiCall.get(nytApiUrl)
-      .then(response => console.log(response));
+      .then(response => this.response);
   },
 };
 </script>
