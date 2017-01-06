@@ -30,7 +30,7 @@ export default {
     // make an ajax call
     apiCall.get(nytApiUrl)
       .then((response) => {
-        response.docs;
+        this.articles = response;
       })
       .catch((err) => {
         console.log(err);
