@@ -14,6 +14,7 @@ export default {
   name: 'nyt-search-results',
   data() {
     return {
+      // this is the response
       articles: [],
     };
   },
@@ -30,7 +31,8 @@ export default {
     // make an ajax call
     apiCall.get(nytApiUrl)
       .then((response) => {
-        this.articles = response;
+        // assign response to articles variable this will get returned by data method above
+        this.articles = response.data.response.docs;
       })
       .catch((err) => {
         console.log(err);
