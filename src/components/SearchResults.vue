@@ -14,12 +14,12 @@ export default {
   name: 'nyt-search-results',
   data() {
     return {
-      artices: [],
+      articles: [],
     };
   },
   mounted() {
     const searchQuery = 'Reuters';
-    const apiKey = '2e69849a8c1f4e76aaad0835e3e179cd'; // Be Kind Rewind: https://youtu.be/J7C8nHAAs70?t=17s > get your own API please.
+    const apiKey = '2e69849a8c1f4e76aaad0835e3e179cd'; // Be Kind Rewind: https://youtu.be/J7C8nHAAs70?t=17s > get your own API key please.
     const nytApiUrl = `http://api.nytimes.com/svc/search/v2/articlesearch.json?q=${searchQuery}&sort=newest&api-key=${apiKey}`;
     const apiCall = Axios.create({
       baseURL: nytApiUrl,
@@ -29,7 +29,12 @@ export default {
     });
     // make an ajax call
     apiCall.get(nytApiUrl)
-      .then(response => this.response);
+      .then((response) => {
+        response.docs;
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   },
 };
 </script>
