@@ -1,9 +1,7 @@
 
 <template>
   <div class="nyt-search-results">
-    <div v-for="article in articles">
-      {{ articles }}
-    </div>
+    <article-results></article-results>
   </div>
 </template>
 
@@ -14,9 +12,21 @@ export default {
   name: 'nyt-search-results',
   data() {
     return {
-      // this is the response
       articles: [],
     };
+  },
+  components: {
+    'article-results': {
+      template: `
+        <div>
+          <div v-for="article in articles">
+            <img src="http://google.com" alt="article photo">
+            <h1>{{ articles.headline }}</h1>
+            <div>{{ articles.pub_date }} | {{ articles.byline }}</div>
+            <p>{{ articles.lead_paragraph }}</p>
+          </div>
+        </div>`,
+    },
   },
   mounted() {
     const searchQuery = 'Reuters';
@@ -40,10 +50,3 @@ export default {
   },
 };
 </script>
-
-<style>
-  .search-results {
-    background-color:#FFF;
-    min-height: 300px;
-  }
-</style>
