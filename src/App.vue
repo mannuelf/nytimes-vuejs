@@ -1,26 +1,35 @@
 <template>
   <div id="nyt-app">
-    <img class="nyt-logo" src="./assets/NewYorkTimes.svg">
-    <SearchInput></SearchInput>
-    <SearchResults></SearchResults>
+    <header class="header">
+      <img class="nyt-logo" src="./assets/NewYorkTimes.svg">
+    </header>
+    <section class="section">
+      <div class="container is-fluid">
+        <SearchInput></SearchInput>
+        <SearchResults></SearchResults>
+        <Footer></Footer>
+      </div>
+    </section>
   </div>
 </template>
 
 <script>
 import SearchInput from './components/SearchInput';
 import SearchResults from './components/SearchResults';
+import Footer from './components/Footer';
 
 export default {
   name: 'nyt-app',
   components: {
     SearchInput,
     SearchResults,
+    Footer,
   },
 };
 </script>
 
 <style>
-  @import url(https://cdnjs.cloudflare.com/ajax/libs/milligram/1.2.4/milligram.min.css);
+  @import url(https://cdnjs.cloudflare.com/ajax/libs/bulma/0.3.0/css/bulma.min.css);
   body {
     background-color: #eee;
   }

@@ -1,13 +1,31 @@
 
 <template id="nyt-article">
   <div>
-    <div v-for="article in articles">
-        <a v-bind:href="article.web_url">
-          <img v-bind:src="article.multimedia.url" v-bind:alt="article.headline.main">
-        </a>
-        <h1><a v-bind:href="article.web_url">{{ article.headline.main }}</a></h1>
-        <div>{{ article.pub_date }} | {{ article.byline.original }}</div>
-        <p>{{ article.lead_paragraph }}</p>
+     <div class="columns">
+      <div v-for="article in articles" class="column is-one-third">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <a v-bind:href="article.web_url">
+                <img v-bind:src="article.multimedia.url" v-bind:alt="article.headline.main">
+              </a>
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-content">
+                <p class="title is-4"><a v-bind:href="article.web_url">{{ article.headline.main }}</a></p>
+                <p class="subtitle is-6">{{ article.byline.original }}</p>
+              </div>
+            </div>
+            <div class="content">
+              {{ article.lead_paragraph }}
+              <br>
+              <small>{{ article.pub_date }}</small>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
