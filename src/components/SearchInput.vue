@@ -1,13 +1,11 @@
 <template>
   <form id="form-container" class="form-container">
     <div class="row">
-      <div class="column column-80">
+      <div class="column column-100">
         <label for="search" class="hidden">Search:</label>
         <input v-model="userSearches" id="jsSearchInput" class="search-input" type="text" name="search" placeholder="I am looking for...">
-			</div>
-			<div class="column column-20">
-        <button v-on:click="searchArticles" id="submit-btn">Search</button>
-			</div>
+        <div class="float-right"><button v-on:click="searchArticles" id="submit-btn">Search</button></div>
+      </div>
 		</div>
 	</form>
 </template>
@@ -46,6 +44,10 @@ export default {
   input[type='reset'], input[type='submit'] {
     background-color: #333;
     border: 0.1rem solid #333;
+  }
+
+  input[type='text'] {
+    background-color: #FFF;
   }
 
   input[type='email']:focus, input[type='number']:focus,
