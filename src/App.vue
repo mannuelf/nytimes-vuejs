@@ -57,4 +57,10 @@ export default {
     background-size: 200px;
     background-position: .75rem .25rem;
   }
+  a:link,a:visited {
+    color: #000;
+  }
+  a:hover {
+    color: #F90;
+  }
 </style>

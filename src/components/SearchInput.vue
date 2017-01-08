@@ -3,7 +3,7 @@
   <div class="control is-grouped">
     <p class="control is-expanded">
       <label for="search" class="hidden">Search:</label>
-      <input class="input is-two-thirds" type="text" placeholder="I am looking for...">
+      <input v-model="searchArticles" class="input is-two-thirds" type="text" placeholder="I am looking for...">
     </p>
     <p class="control">
       <a class="button is-info">
@@ -19,8 +19,9 @@ export default {
   name: 'search-input',
   data() {
     return {
-      userSearches: '',
-      query: [],
+      loading: false,
+      error: false,
+      query: '',
     };
   },
   methods() {
