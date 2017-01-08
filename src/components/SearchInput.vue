@@ -3,7 +3,7 @@
   <div class="control is-grouped">
     <p class="control is-expanded">
       <label for="search" class="hidden">Search:</label>
-      <input class="input" type="text" placeholder="I am looking for...">
+      <input class="input is-two-thirds" type="text" placeholder="I am looking for...">
     </p>
     <p class="control">
       <a class="button is-info">
@@ -30,17 +30,17 @@ export default {
       },
     };
   },
-  // mounted() {
-  //  document.querySelector('.search-input').addEventListener('click', () => {
-  //    const query = document.querySelector('.search-input').value;
-  //    query.value = '';
-  // });
-  // },
 };
 </script>
 
 <style scoped>
   .hidden {
     display: none;
+  }
+  .is-info {
+    background-color: #000;
+  }
+  .button.is-info.is-hovered, .button.is-info:hover {
+    background-color: #333;
   }
 </style>

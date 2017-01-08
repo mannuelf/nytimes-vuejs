@@ -4,9 +4,6 @@
       <div class="nav-left">
         <a class="nav-item nyt-logo" href="http://developer.nytimes.com/" target="_blank"></a>
       </div>
-
-      <!-- This "nav-menu" is hidden on mobile -->
-      <!-- Add the modifier "is-active" to display it on mobile -->
       <div class="nav-right nav-menu is-active">
         <span class="nav-item">
           <SearchInput />
@@ -47,14 +44,17 @@ export default {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-align: center;
+    text-align: inherit;
     color: #2c3e50;
+  }
+  .nav {
+    background-color: #f1f1f1;
   }
   .nyt-logo {
     width: 100%;
-    background-image: url('http://static01.nytimes.com/packages/images/developer/logos/poweredby_nytimes_200a.png');
+    background-image: url('./assets/poweredby_nytimes_200c.png');
     background-repeat: no-repeat;
     background-size: 200px;
-    background-position: 1rem .5rem;
+    background-position: .75rem .25rem;
   }
 </style>
