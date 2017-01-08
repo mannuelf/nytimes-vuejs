@@ -2,33 +2,12 @@
   <div id="nyt-app">
     <nav class="nav">
       <div class="nav-left">
-        <a class="nav-item nyt-logo" href="#"></a>
+        <a class="nav-item nyt-logo" href="http://developer.nytimes.com/" target="_blank"></a>
       </div>
-
-      <div class="nav-center">
-        <a class="nav-item">
-          <span class="icon">
-            <i class="fa fa-github"></i>
-          </span>
-        </a>
-        <a class="nav-item">
-          <span class="icon">
-            <i class="fa fa-twitter"></i>
-          </span>
-        </a>
-      </div>
-
-      <!-- This "nav-toggle" hamburger menu is only visible on mobile -->
-      <!-- You need JavaScript to toggle the "is-active" class on "nav-menu" -->
-      <span class="nav-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </span>
 
       <!-- This "nav-menu" is hidden on mobile -->
       <!-- Add the modifier "is-active" to display it on mobile -->
-      <div class="nav-right nav-menu">
+      <div class="nav-right nav-menu is-active">
         <span class="nav-item">
           <SearchInput />
         </span>
@@ -73,10 +52,9 @@ export default {
   }
   .nyt-logo {
     width: 100%;
-    background-image: url('./assets/NewYorkTimes.svg');
+    background-image: url('http://static01.nytimes.com/packages/images/developer/logos/poweredby_nytimes_200a.png');
     background-repeat: no-repeat;
-    background-size: contain;
-    background-size: 280px;
+    background-size: 200px;
     background-position: 1rem .5rem;
   }
 </style>

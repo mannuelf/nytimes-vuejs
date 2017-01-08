@@ -1,7 +1,7 @@
 
 <template id="nyt-article">
   <div>
-     <div class="columns">
+     <div class="columns is-multiline is-mobile">
       <div v-for="article in articles" class="column is-one-third">
         <div class="card">
           <div class="card-image">

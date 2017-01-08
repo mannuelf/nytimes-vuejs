@@ -1,11 +1,15 @@
 <template>
 <div>
-    <div class="control has-addons has-addons-right">
-    <form id="form">
+  <div class="control is-grouped">
+    <p class="control is-expanded">
       <label for="search" class="hidden">Search:</label>
-      <input v-model="userSearches" id="jsSearchInput"  class="input" type="text" name="search" placeholder="I am looking for...">
-      <button v-on:click="searchArticles" class="button is-info">Search</button>
-    </form>
+      <input class="input" type="text" placeholder="I am looking for...">
+    </p>
+    <p class="control">
+      <a class="button is-info">
+        Search
+      </a>
+    </p>
   </div>
 </div>
 </template>
