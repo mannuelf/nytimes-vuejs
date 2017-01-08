@@ -1,13 +1,13 @@
 <template>
-  <form id="form-container" class="form-container">
-    <div class="row">
-      <div class="column column-100">
-        <label for="search" class="hidden">Search:</label>
-        <input v-model="userSearches" id="jsSearchInput" class="search-input" type="text" name="search" placeholder="I am looking for...">
-        <div class="float-right"><button v-on:click="searchArticles" id="submit-btn">Search</button></div>
-      </div>
-		</div>
-	</form>
+<div>
+    <div class="control has-addons has-addons-right">
+    <form id="form">
+      <label for="search" class="hidden">Search:</label>
+      <input v-model="userSearches" id="jsSearchInput"  class="input" type="text" name="search" placeholder="I am looking for...">
+      <button v-on:click="searchArticles" class="button is-info">Search</button>
+    </form>
+  </div>
+</div>
 </template>
 
 <script>
@@ -38,22 +38,5 @@ export default {
 <style scoped>
   .hidden {
     display: none;
-  }
-
-  .button, button, input[type='button'],
-  input[type='reset'], input[type='submit'] {
-    background-color: #333;
-    border: 0.1rem solid #333;
-  }
-
-  input[type='text'] {
-    background-color: #FFF;
-  }
-
-  input[type='email']:focus, input[type='number']:focus,
-  input[type='password']:focus, input[type='search']:focus,
-  input[type='tel']:focus, input[type='text']:focus,
-  input[type='url']:focus, textarea:focus, select:focus {
-    border-color: #000;
   }
 </style>

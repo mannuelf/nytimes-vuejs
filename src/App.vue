@@ -1,13 +1,44 @@
 <template>
   <div id="nyt-app">
-    <header class="header">
-      <img class="nyt-logo" src="./assets/NewYorkTimes.svg">
-    </header>
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item nyt-logo" href="#"></a>
+      </div>
+
+      <div class="nav-center">
+        <a class="nav-item">
+          <span class="icon">
+            <i class="fa fa-github"></i>
+          </span>
+        </a>
+        <a class="nav-item">
+          <span class="icon">
+            <i class="fa fa-twitter"></i>
+          </span>
+        </a>
+      </div>
+
+      <!-- This "nav-toggle" hamburger menu is only visible on mobile -->
+      <!-- You need JavaScript to toggle the "is-active" class on "nav-menu" -->
+      <span class="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+
+      <!-- This "nav-menu" is hidden on mobile -->
+      <!-- Add the modifier "is-active" to display it on mobile -->
+      <div class="nav-right nav-menu">
+        <span class="nav-item">
+          <SearchInput />
+        </span>
+      </div>
+    </nav>
+
     <section class="section">
       <div class="container is-fluid">
-        <SearchInput></SearchInput>
-        <SearchResults></SearchResults>
-        <Footer></Footer>
+        <SearchResults />
+        <FooterCredits />
       </div>
     </section>
   </div>
@@ -16,14 +47,14 @@
 <script>
 import SearchInput from './components/SearchInput';
 import SearchResults from './components/SearchResults';
-import Footer from './components/Footer';
+import FooterCredits from './components/Footer-credits';
 
 export default {
   name: 'nyt-app',
   components: {
     SearchInput,
     SearchResults,
-    Footer,
+    FooterCredits,
   },
 };
 </script>
@@ -42,5 +73,10 @@ export default {
   }
   .nyt-logo {
     width: 100%;
+    background-image: url('./assets/NewYorkTimes.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-size: 280px;
+    background-position: 1rem .5rem;
   }
 </style>
