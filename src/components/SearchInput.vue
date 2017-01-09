@@ -3,7 +3,12 @@
   <div class="control is-grouped">
     <p class="control is-expanded">
       <label for="search" class="hidden">Search:</label>
-      <input v-model="searchArticles" class="input is-two-thirds" type="text" placeholder="I am looking for...">
+      <!-- Grab the value with v-bind:value, will get passed down to child component via props -->
+      <input
+        v-model="searchArticles"
+        v-bind:value="value"
+        v-on:input="updateValue($event.target.value)"
+        class="input is-two-thirds" type="text" placeholder="I am looking for...">
     </p>
     <p class="control">
       <a class="button is-info">
@@ -19,15 +24,13 @@ export default {
   name: 'search-input',
   data() {
     return {
-      loading: false,
-      error: false,
-      query: '',
+      props: ['value'],
     };
   },
   methods() {
     return {
-      searchArticles() {
-        console.log('Searching...');
+      updateValue(value) {
+        console.log('Searching...', value);
       },
     };
   },
