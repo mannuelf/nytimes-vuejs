@@ -25,6 +25,9 @@ export default {
   data() {
     return {
       props: ['value'],
+      updateValue: '',
+      value: '',
+      searchArticles: '',
     };
   },
   methods() {

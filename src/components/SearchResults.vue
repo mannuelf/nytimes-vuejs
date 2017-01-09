@@ -81,3 +81,15 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+  .card {
+    min-height: 260px;
+  }
+  .card-content .title+.subtitle {
+    margin-top: -.8rem;
+    border-bottom: 1px solid #eee;
+    padding: .2rem 0 .5rem 0;
+    font-size: 0.8em;
+  }
+</style>

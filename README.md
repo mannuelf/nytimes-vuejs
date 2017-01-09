@@ -8,6 +8,13 @@ https://developer.nytimes.com/
 $ npm run dev
 ```
 
+## Make a build
+```
+$ npm run build
+```
+
 Built using: [vue-webpack-boilerplate](https://github.com/vuejs-templates/webpack)
 
-`DEMO` coming soon... You can also checkout the jQuery implimentation here: [jQuery Version](https://github.com/manidf/nytimes-jquery)
+`DEMO` [Click here to view demo](http://themwebs.me/labs/nytimes-vuejs/)
+
+You can also checkout the jQuery implimentation here: [jQuery Version](https://github.com/manidf/nytimes-jquery)
