@@ -5,10 +5,11 @@
       <label for="search" class="hidden">Search:</label>
       <!-- Grab the value with v-bind:value, will get passed down to child component via props -->
       <input
-        v-model="searchArticles"
+        ref="input"
+        v-model="value"
         v-bind:value="value"
-        v-on:input="updateValue($event.target.value)"
-        class="input is-two-thirds" type="text" placeholder="I am looking for...">
+        class="input is-two-thirds"
+        type="text" placeholder="I am looking for...">
     </p>
     <p class="control">
       <a class="button is-info">
@@ -25,16 +26,7 @@ export default {
   data() {
     return {
       props: ['value'],
-      updateValue: '',
-      value: '',
-      searchArticles: '',
-    };
-  },
-  methods() {
-    return {
-      updateValue(value) {
-        console.log('Searching...', value);
-      },
+      value: 'value',
     };
   },
 };
