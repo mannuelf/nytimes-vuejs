@@ -1,7 +1,7 @@
 <template id="search-input">
 <div class="control is-grouped">
 
-  <form method="post" @submit.prevent="onSubmit()">
+  <form method="post" @submit.prevent="loadData()">
     <p class="control has-addons">
       <label for="search" class="hidden">Search:</label>
       <input
@@ -21,16 +21,17 @@
 </template>
 
 <script>
-import Axios from 'axios';
 
 export default {
   name: 'search-input',
   errors: [],
+  props: '',
   data() {
     return {
+      articles: ['searchQuery'],
       searchQuery: '',
       btnSubmitQuery: '',
-      onSubmit: '',
+      loadData: '',
     };
   },
   watch() {
@@ -45,25 +46,14 @@ export default {
     return {
       btnSubmitQuery() {
         this.searchQuery = '';
-        this.onSubmit();
+        this.loadData();
       },
-      onSubmit(searchQuery) {
-        const app = this;
-        const apiQuery = searchQuery;
-        const apiKey = '2e69849a8c1f4e76aaad0835e3e179cd'; // Be Kind Rewind: https://youtu.be/J7C8nHAAs70?t=17s > please get your own API key please.
-        const nytApiUrl = `http://api.nytimes.com/svc/search/v2/articlesearch.json?q=${apiQuery}&sort=newest&api-key=${apiKey}`;
-        const apiCall = Axios.create({
-          baseURL: nytApiUrl,
-          headers: {
-            'content-type': 'application/json',
-          },
-        });
-        // make an ajax call
-        apiCall.get(nytApiUrl)
-          .then((response) => {
-            // assign the response to articles variable this will get assigned data() method above
-            app.articles = response.data.response.docs;
-          });
+      loadData(searchQuery) {
+        const formattedValue = searchQuery.trim();
+        if (formattedValue !== searchQuery) {
+          this.$refs.input.value = formattedValue;
+        }
+        this.$emit('input', formattedValue);
       },
     };
   },
