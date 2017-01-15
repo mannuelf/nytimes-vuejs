@@ -1,32 +1,70 @@
-<template>
-<div>
-  <div class="control is-grouped">
-    <p class="control is-expanded">
+<template id="search-input">
+<div class="control is-grouped">
+
+  <form method="post" @submit.prevent="onSubmit()">
+    <p class="control has-addons">
       <label for="search" class="hidden">Search:</label>
-      <!-- Grab the value with v-bind:value, will get passed down to child component via props -->
       <input
         ref="input"
-        v-model="value"
-        v-bind:value="value"
+        name="searchQuery"
+        v-model="searchQuery"
         class="input is-two-thirds"
-        type="text" placeholder="I am looking for...">
-    </p>
-    <p class="control">
-      <a class="button is-info">
-        Search
+        type="text" placeholder="I'm looking for => ">
+      <a class="button is-info"
+        @click="btnSubmitQuery()">
+          Search
       </a>
     </p>
-  </div>
+  </form>
+
 </div>
 </template>
 
 <script>
+import Axios from 'axios';
+
 export default {
   name: 'search-input',
+  errors: [],
   data() {
     return {
-      props: ['value'],
-      value: 'value',
+      searchQuery: '',
+      btnSubmitQuery: '',
+      onSubmit: '',
+    };
+  },
+  watch() {
+    return {
+      searchQuery() {
+        this.searchQuery = '';
+        this.btnSubmitQuery();
+      },
+    };
+  },
+  methods() {
+    return {
+      btnSubmitQuery() {
+        this.searchQuery = '';
+        this.onSubmit();
+      },
+      onSubmit(searchQuery) {
+        const app = this;
+        const apiQuery = searchQuery;
+        const apiKey = '2e69849a8c1f4e76aaad0835e3e179cd'; // Be Kind Rewind: https://youtu.be/J7C8nHAAs70?t=17s > please get your own API key please.
+        const nytApiUrl = `http://api.nytimes.com/svc/search/v2/articlesearch.json?q=${apiQuery}&sort=newest&api-key=${apiKey}`;
+        const apiCall = Axios.create({
+          baseURL: nytApiUrl,
+          headers: {
+            'content-type': 'application/json',
+          },
+        });
+        // make an ajax call
+        apiCall.get(nytApiUrl)
+          .then((response) => {
+            // assign the response to articles variable this will get assigned data() method above
+            app.articles = response.data.response.docs;
+          });
+      },
     };
   },
 };

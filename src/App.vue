@@ -13,7 +13,7 @@
 
     <section class="section">
       <div class="container is-fluid">
-        <SearchResults />
+        <ArticleCard />
         <FooterCredits />
       </div>
     </section>
@@ -22,14 +22,15 @@
 
 <script>
 import SearchInput from './components/SearchInput';
-import SearchResults from './components/SearchResults';
-import FooterCredits from './components/Footer-credits';
+import ArticleCard from './components/ArticleCard';
+import FooterCredits from './components/FooterCredits';
 
 export default {
+  debug: true,
   name: 'nyt-app',
   components: {
     SearchInput,
-    SearchResults,
+    ArticleCard,
     FooterCredits,
   },
 };
