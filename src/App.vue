@@ -21,19 +21,18 @@
 </template>
 
 <script>
-import SearchInput from './components/SearchInput';
-import ArticleCard from './components/ArticleCard';
-import FooterCredits from './components/FooterCredits';
+  import SearchInput from './components/SearchInput';
+  import ArticleCard from './components/ArticleCard';
+  import FooterCredits from './components/FooterCredits';
 
-export default {
-  debug: true,
-  name: 'nyt-app',
-  components: {
-    SearchInput,
-    ArticleCard,
-    FooterCredits,
-  },
-};
+  export default {
+    name: 'nyt-app',
+    components: {
+      SearchInput,
+      ArticleCard,
+      FooterCredits,
+    },
+  };
 </script>
 
 <style>
