@@ -3,6 +3,11 @@
 Read the New York Times in a SPA built with VueJS, using NYTimes open API.
 https://developer.nytimes.com/
 
+## Install dependencies
+```
+$ npm install
+```
+
 ## Run the app: dev mode
 ```
 $ npm run dev
