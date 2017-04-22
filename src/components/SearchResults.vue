@@ -1,5 +1,6 @@
 <template id="nyt-article">
   <div>
+    <div :search="search">I am searching for {{ search }}</div>
     <div class="columns is-multiline is-mobile">
       <div v-for="article in articles" class="column is-one-third">
         <div class="card">
@@ -41,21 +42,17 @@
 
   export default {
     name: 'nyt-article',
+    props: ['search'],
     data() {
       return {
         articles: [],
+        search: 'search',
       };
     },
     components: {
       'nyt-article': {
         template: '#nyt-article',
       },
-    },
-    computed() {
-      return {
-        userSearchInput() {
-        },
-      };
     },
     mounted() {
       const searchQuery = 'Steve Jobs';

@@ -1,13 +1,12 @@
 <template id="search-input">
   <div class="control is-grouped">
-
-    <form method="post" @submit.prevent="loadData()">
+    <form method="post">
       <p class="control has-addons">
-        <label for="search" class="hidden">{{ value }}</label>
+        <label for="search" class="hidden">SEARCH</label>
         <input
           v-model="search"
           class="input is-two-thirds"
-          type="text" placeholder="I'm looking for => ">
+          type="text" placeholder="I'm looking for">
 
           <a class="button is-info">
               Search
@@ -21,11 +20,16 @@
 <script>
   export default {
     name: 'search',
+    props: ['search'],
     data() {
       return {
         search: '',
-        articles: [],
       };
+    },
+    computed: {
+      queryResult() {
+        return this.search;
+      },
     },
   };
 </script>
