@@ -18,6 +18,8 @@
 </template>
 
 <script>
+  import { eventBus } from '../main';
+
   export default {
     name: 'search',
     props: ['search'],
@@ -26,9 +28,10 @@
         search: '',
       };
     },
-    computed: {
-      queryResult() {
-        return this.search;
+    methods: {
+      search(search) {
+        this.search = search;
+        eventBus.$emit('articleSearched', this.search);
       },
     },
   };

@@ -4,6 +4,14 @@ import Vue from 'vue';
 import App from './App';
 
 /* eslint-disable no-new */
+const eventBus = new Vue({
+  methods: {
+    searchArticles(searchQuery) {
+      this.$emit('articleSearched', searchQuery);
+    },
+  },
+});
+export { eventBus as default };
 
 new Vue({
   el: '#nyt-app',

@@ -39,6 +39,7 @@
 
 <script>
   import Axios from 'axios';
+  import { eventBus } from '../main';
 
   export default {
     name: 'nyt-article',
@@ -46,13 +47,18 @@
     data() {
       return {
         articles: [],
-        search: 'search',
+        search: '',
       };
     },
     components: {
       'nyt-article': {
         template: '#nyt-article',
       },
+    },
+    created() {
+      eventBus.$on('articleSearched', (data) => {
+        this.search = data;
+      });
     },
     mounted() {
       const searchQuery = 'Steve Jobs';
