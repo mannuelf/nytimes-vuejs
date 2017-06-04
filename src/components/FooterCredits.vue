@@ -3,7 +3,7 @@
     <div class="container">
       <div class="content has-text-centered">
         <p>
-          <strong>Read the New York Times</strong> by <a href="https://github.com/manidf" target="_blank">Mannuel Ferreira</a>. <br>
+          <strong>Read the New York Times</strong> by <a href="https://github.com/mannuelf" target="_blank">Mannuel Ferreira</a>. <br>
           This website is built using the <a href="https://developer.nytimes.com/" target="_blank">New York Times open API</a>,
           <a href="https://github.com/vuejs-templates/webpack" target="_blank">Vue JS 2.0</a>,
           <a href="https://github.com/mzabriskie/axios" target="_blank">Axios HTTP Client</a> and
