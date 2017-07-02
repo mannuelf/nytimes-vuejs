@@ -21,6 +21,7 @@
 <script>
   export default {
     name: 'search',
+    props: ['search'],
     data() {
       return {
         search: '',

@@ -1,9 +1,10 @@
 <template id="nyt-article">
   <div>
     <div class="columns is-multiline is-mobile">
+
       <div v-for="article in articles" class="column is-one-third">
         <div class="card">
-          <!--<div class="card-image">
+          <div class="card-image">
             <figure class="image is-4by3">
               <a v-bind:href="article.web_url">
                 <img
@@ -12,7 +13,7 @@
                 />
               </a>
             </figure>
-          </div>-->
+          </div>
           <div class="card-content">
             <div class="media">
               <div class="media-content">
@@ -32,6 +33,7 @@
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </template>
@@ -41,6 +43,7 @@
 
   export default {
     name: 'nyt-article',
+    props: ['search'],
     data() {
       return {
         articles: [],
