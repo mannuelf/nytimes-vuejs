@@ -8,7 +8,10 @@
             <figure class="image is-4by3">
               <a v-bind:href="article.web_url">
                 <img
-                  v-bind:src="'https://nytimes.com/' + article.multimedia.url"
+                  v-bind:src="'https://nytimes.com/'
+                    + article.multimedia !== 'undefined'
+                    ? article.multimedia[0][url]
+                    : ''"
                   v-bind:alt="article.headline.main"
                 />
               </a>
