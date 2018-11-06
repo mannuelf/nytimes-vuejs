@@ -1,4 +1,4 @@
-# Read the New York Times
+# Vue York Times
 
 Read the New York Times in a SPA built with VueJS, using NYTimes open API.
 https://developer.nytimes.com/
